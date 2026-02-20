@@ -19,9 +19,11 @@ dependencies {
     implementation(libs.firebase.admin)
     implementation(libs.bundles.jjwt)
     implementation(libs.bundles.flyway)
+    implementation(libs.spring.boot.jpa)
     runtimeOnly(libs.postgresql)
     developmentOnly(libs.spring.boot.devtools)
 
     testImplementation(libs.spring.boot.test)
     testImplementation(libs.spring.security.test)
+    testRuntimeOnly("com.h2database:h2")
 }
