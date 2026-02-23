@@ -20,13 +20,9 @@ subprojects {
 
 	configure<io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension> {
 		imports {
-			mavenBom("org.springframework.boot:spring-boot-dependencies:3.4.3")
+			mavenBom("org.springframework.boot:spring-boot-dependencies:3.5.11")
 			mavenBom("org.springframework.ai:spring-ai-bom:1.0.0-M6")
 		}
-	}
-
-	configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
-		jvmToolchain(21)
 	}
 
 	dependencies {
@@ -44,6 +40,11 @@ subprojects {
 			freeCompilerArgs.add("-Xjsr305=strict")
 			jvmTarget.set(JvmTarget.JVM_21)
 		}
+	}
+
+	tasks.withType<JavaCompile>().configureEach {
+		sourceCompatibility = "21"
+		targetCompatibility = "21"
 	}
 
 	tasks.withType<Test> {
