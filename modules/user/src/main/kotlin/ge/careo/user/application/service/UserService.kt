@@ -8,10 +8,12 @@ import ge.careo.user.domain.model.Gender
 import ge.careo.user.domain.model.PhoneNumber
 import ge.careo.user.domain.model.User
 import ge.careo.user.domain.model.UserId
+import org.springframework.stereotype.Service
 import java.time.LocalDate
 import java.util.UUID
 import java.time.Instant
 
+@Service
 class UserService(
     private val userRepositoryPort: UserRepositoryPort
 ) : RegisterUserUseCase, GetUserUseCase {

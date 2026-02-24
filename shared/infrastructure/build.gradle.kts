@@ -4,4 +4,5 @@ plugins {
 
 dependencies {
     implementation(project(":shared:domain"))
+    implementation(libs.spring.boot.security)
 }

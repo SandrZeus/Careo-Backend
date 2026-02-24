@@ -6,6 +6,7 @@ import jakarta.persistence.EnumType
 import jakarta.persistence.Enumerated
 import jakarta.persistence.Id
 import jakarta.persistence.Table
+import org.hibernate.annotations.ColumnTransformer
 import java.time.Instant
 import java.time.LocalDate
 import java.util.UUID
@@ -30,6 +31,7 @@ class UserEntity(
 
     @Enumerated(EnumType.STRING)
     @Column(name = "gender")
+    @ColumnTransformer(write = "?::gender_type")
     val gender: GenderEntity?,
 
     @Column(name = "date_of_birth")

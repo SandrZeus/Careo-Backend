@@ -5,7 +5,9 @@ import ge.careo.user.domain.model.PhoneNumber
 import ge.careo.user.domain.model.User
 import ge.careo.user.domain.model.UserId
 import ge.careo.user.infrastructure.persistence.repository.UserJpaRepository
+import org.springframework.stereotype.Component
 
+@Component
 class UserRepositoryAdapter(
     private val userJpaRepository: UserJpaRepository
 ) : UserRepositoryPort {
